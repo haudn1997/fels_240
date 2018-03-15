@@ -32,6 +32,11 @@ class User extends Authenticatable
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class)->withPivot('status')->withTimestamps();
+        return $this->belongsToMany(Lesson::class)->withPivot('result')->withTimestamps();
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
     }
 }
