@@ -23,6 +23,6 @@ class Lesson extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class)->withPivot('status')->withTimestamps();
+        return $this->belongsToMany(User::class)->withPivot('result')->withTimestamps();
     }
 }
