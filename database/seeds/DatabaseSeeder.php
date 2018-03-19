@@ -4,11 +4,6 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
     	$this->call(LanguagesTableSeeder::class);
@@ -20,9 +15,9 @@ class DatabaseSeeder extends Seeder
      	$this->call(TestsTableSeeder::class);
      	$this->call(QuestionsTableSeeder::class);
      	$this->call(WordsTableSeeder::class);
-       $this->call(LessonUserTableSeeder::class);
-       $this->call(AnswerQuestionTableSeeder::class);
-       $this->call(ActivityTableSeeder::class);
-       $this->call(FollowingTableSeeder::class);
+        $this->call(LessonUserTableSeeder::class);
+        $this->call(AnswerQuestionTableSeeder::class);
+        $this->call(ActivityTableSeeder::class);
+        $this->call(FollowingTableSeeder::class);
     }
 }
