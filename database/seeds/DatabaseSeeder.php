@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
      	$this->call(WordsTableSeeder::class);
        $this->call(LessonUserTableSeeder::class);
        $this->call(AnswerQuestionTableSeeder::class);
+       $this->call(ActivityTableSeeder::class);
+       $this->call(FollowingTableSeeder::class);
     }
 }

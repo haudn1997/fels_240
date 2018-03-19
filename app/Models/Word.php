@@ -10,4 +10,9 @@ class Word extends Model
     {
         return $this->belongsTo(Lesson::class);
     }
+
+    public function activities()
+    {
+        return $this->morphMany(Activity::class, 'activityTable');
+    }
 }
