@@ -25,4 +25,9 @@ class Lesson extends Model
     {
         return $this->belongsToMany(User::class)->withPivot('result')->withTimestamps();
     }
+
+    public function activities()
+    {
+        return $this->morphMany(Activity::class, 'activityTable');
+    }
 }
