@@ -39,8 +39,8 @@
 	                            	    @endforeach
 	                                </div>
 	                            @endif
-	                            @if (session('thongbao'))
-	                                {{session('thongbao')}}
+	                            @if (session('announce'))
+	                                {{session('announce')}}
 	                            @endif
 	                            {{ Form::open(['routes' => 'login', 'method' => 'post']) }}
 	                            {{ Form::token() }}
@@ -85,16 +85,6 @@
 	                        	</div>
 	                        </div>
 	                        <div class="form-bottom">
-	                            @if (count($errors))
-	                            	<div class="alert alert-danger">
-	                            		@foreach($errors->all() as $err)
-	                            			{{$err}} <br>
-	                            		@endforeach
-	                            	</div>
-	                            @endif
-	                            @if (session('thongbao'))
-	                            	{{session('thongbao')}}
-	                            @endif
 				                {{ Form::open(['routes' => 'login', 'method' => 'post']) }}
 				                {{ Form::token() }}
 				                <div class="form-group">
