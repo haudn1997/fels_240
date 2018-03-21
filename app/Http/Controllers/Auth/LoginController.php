@@ -24,9 +24,9 @@ class LoginController extends Controller
         $password = $request->password;
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect()->route('home' );
+            return redirect()->route('home');
         }
-         
+
         return redirect('login')->with('announce', trans('message.annouce'));
     }
 }

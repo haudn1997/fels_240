@@ -35,7 +35,7 @@
 	                            @if (count($errors))
 	                            	<div class="alert alert-danger">
 	                            	    @foreach($errors->all() as $err)
-	                            		    {{$err}} <br>
+	                            		    {{ $err }} <br>
 	                            	    @endforeach
 	                                </div>
 	                            @endif
@@ -85,7 +85,17 @@
 	                        	</div>
 	                        </div>
 	                        <div class="form-bottom">
-				                {{ Form::open(['routes' => 'login', 'method' => 'post']) }}
+	                            @if (count($errors))
+	                            	<div class="alert alert-danger">
+	                            	    @foreach($errors->all() as $err)
+	                            	        {{ $err }} <br>
+	                            	    @endforeach
+	                                </div>
+	                            @endif
+	                            @if (session('announce_register'))
+	                                {{ session('announce_register') }}
+	                            @endif
+				                {{ Form::open(['routes' => 'register', 'method' => 'post']) }}
 				                {{ Form::token() }}
 				                <div class="form-group">
 				                    {{ Form::label('form-last-name', 'Last name', ['class' => 'sr-only']) }}
@@ -93,11 +103,11 @@
 				                </div>
 				                <div class="form-group">
 				                    {{ Form::label('form-email', 'Email', ['class' => 'sr-only']) }}
-				                    {{ Form::text('email', null, ['class' => 'form-email form-control', 'placeholder' => 'Email...', 'id' => 'form-email']) }}
+				                    {{ Form::text('email_register', null, ['class' => 'form-email form-control', 'placeholder' => 'Email...', 'id' => 'form-email']) }}
 				                </div>
                                 <div class="form-group">
                                     {{ Form::label('form-password', 'Password', ['class' => 'sr-only']) }}
-                                    {{ Form::password('password', ['class' => 'form-password form-control', 'placeholder' => 'Password...', 'id' => 'form-password']) }}
+                                    {{ Form::password('password_register', ['class' => 'form-password form-control', 'placeholder' => 'Password...', 'id' => 'form-password']) }}
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('form-password', 'Repeat Password', ['class' => 'sr-only']) }}
